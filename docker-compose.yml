@@ -1,0 +1,12 @@
+services:
+  haitsu-whisper:
+    build:
+      context: ./packages/haitsu-whisper
+      dockerfile: haitsu-whisper.Dockerfile
+    tty: true
+    ports:
+      - 8000:8000
+    volumes:
+      - ./packages/haitsu-whisper:/app
+    env_file:
+      - ./packages/haitsu-whisper/.env
